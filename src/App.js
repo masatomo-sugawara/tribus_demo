@@ -8,6 +8,7 @@ import Reservation from './Reservation';
 import ResultManagement from './ResultManagement';
 import UserManagement from './UserManagement';
 import Recycle from './Recycle';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path='/ResultManagement' component={ResultManagement}/>
             <Route exact path='/UserManagement' component={UserManagement}/>
             <Route exact path='/Recycle' component={Recycle}/>
+            <AmplifySignOut />
           </div>
         </Router>
       </div>
@@ -30,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App);
